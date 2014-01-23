@@ -1,0 +1,37 @@
+DecimalNumberField
+===========
+
+A field that offers specialized input for decimal numbers and currency values.
+
+Add DecimalNumberField To Your Project
+-------------------------------
+
+Simply drag the source in `src/` into your project and add `#import "MONDecimalNumberField.h"` where
+applicable.
+
+Overview
+--------
+
+![catalog](https://github.com/moneysapp/decimalnumberfield/raw/master/screenshots/screenshot1.png)
+
+This field provides numerical input in a visually intuitive way. It uses the correct keyboard given
+the properties of the field and shows a caret at the expected location.
+
+For example, when entering currencies the number might be displayed as 100.00 and the caret will be
+at 100.|00. Typing the number 3 will update the field to the new visual state: 100.3|0.
+
+### Supported Number Styles
+
+The decimal number field displays its value according to the numberStyle property which is an
+NSNumberFormatterStyle enumeration. The supported values of NSNumberFormatterStyle are:
+
+- NSNumberFormatterNoStyle
+- NSNumberFormatterDecimalStyle
+- NSNumberFormatterCurrencyStyle
+
+Any other formatter style will be converted to NSNumberFormatterNoStyle internally.
+
+License
+=======
+
+Apache 2.0. Copyright Jeff Verkoeyen 2014.

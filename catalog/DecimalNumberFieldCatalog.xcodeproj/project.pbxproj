@@ -15,6 +15,7 @@
 		6635A92618916A740041BC8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6635A92518916A740041BC8F /* AppDelegate.m */; };
 		6635A92818916A740041BC8F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6635A92718916A740041BC8F /* Images.xcassets */; };
 		6635A94718916ABD0041BC8F /* MONDecimalNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6635A94618916ABD0041BC8F /* MONDecimalNumberField.m */; };
+		668D52CC189177E300379E32 /* README.mdown in Resources */ = {isa = PBXBuildFile; fileRef = 668D52CB189177E300379E32 /* README.mdown */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		6635A92E18916A740041BC8F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6635A94518916ABD0041BC8F /* MONDecimalNumberField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MONDecimalNumberField.h; sourceTree = "<group>"; };
 		6635A94618916ABD0041BC8F /* MONDecimalNumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MONDecimalNumberField.m; sourceTree = "<group>"; };
+		668D52CB189177E300379E32 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.mdown; path = ../README.mdown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		6635A90918916A740041BC8F = {
 			isa = PBXGroup;
 			children = (
+				668D52CB189177E300379E32 /* README.mdown */,
 				6635A91B18916A740041BC8F /* DecimalNumberFieldCatalog */,
 				6635A94418916AA80041BC8F /* MONDecimalNumberField */,
 				6635A91418916A740041BC8F /* Frameworks */,
@@ -160,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				668D52CC189177E300379E32 /* README.mdown in Resources */,
 				6635A92018916A740041BC8F /* InfoPlist.strings in Resources */,
 				6635A92818916A740041BC8F /* Images.xcassets in Resources */,
 			);
