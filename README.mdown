@@ -25,9 +25,9 @@ at 100.|00. Typing the number 3 will update the field to the new visual state: 1
 The decimal number field displays its value according to the numberStyle property which is an
 NSNumberFormatterStyle enumeration. The supported values of NSNumberFormatterStyle are:
 
-- NSNumberFormatterNoStyle
-- NSNumberFormatterDecimalStyle
-- NSNumberFormatterCurrencyStyle
+- `NSNumberFormatterNoStyle`
+- `NSNumberFormatterDecimalStyle`
+- `NSNumberFormatterCurrencyStyle`
 
 Any other formatter style will be converted to NSNumberFormatterNoStyle internally.
 
