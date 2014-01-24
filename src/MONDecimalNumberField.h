@@ -18,6 +18,10 @@
 
 @protocol MONDecimalNumberFieldDelegate;
 
+/**
+ * The MONDecimalNumberField class provides a control that allows a user to input formatted decimal
+ * numbers using a decimal keyboard.
+ */
 @interface MONDecimalNumberField : UIControl
 
 @property (nonatomic, strong) NSDecimalNumber*        value;
