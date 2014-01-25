@@ -356,17 +356,6 @@ static const CGFloat kCaretWidth = 2; // Should this be variable based on the fo
     consumed = YES;
   }
 
-  // If we're deleting and it's the last decimal number, delete the decimal separator as well.
-  if (!consumed && isDeleting
-      && range.location > 0
-      && [[_backingString substringWithRange:NSMakeRange(range.location - 1, range.length)] isEqualToString:decimalSeparator]
-      && _backingString.length > 1) {
-    range.length++;
-    range.location--;
-    consumed = YES;
-    shouldChange = YES;
-  }
-
   // Enforce max digit limits.
   if (!consumed && isInserting) {
     NSRange existingDotRange = [_backingString rangeOfString:decimalSeparator];
