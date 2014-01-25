@@ -529,10 +529,10 @@ static const CGFloat kCaretWidth = 2; // Should this be variable based on the fo
   // Strip .00 when not focused.
   if (self.stripZeroCents) {
     NSString* decimalSeparator = [self decimalSeparator];
-    BOOL lastCharacterIsDecimalSeparator = [_backingString hasSuffix:decimalSeparator];
+    BOOL hasDecimalSeparator = [_backingString rangeOfString:decimalSeparator].location != NSNotFound;
 
     BOOL isFocused = self.isFirstResponder;
-    if (!isFocused || !lastCharacterIsDecimalSeparator) {
+    if (!(isFocused && hasDecimalSeparator)) {
       NSString* stripString = [decimalSeparator stringByAppendingString:[@"" stringByPaddingToLength:_numberFormatter.minimumFractionDigits withString:@"0" startingAtIndex:0]];
       NSRange range = [formattedString rangeOfString:stripString];
       if (range.location != NSNotFound) {
