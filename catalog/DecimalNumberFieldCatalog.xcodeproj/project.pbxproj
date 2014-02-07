@@ -33,6 +33,9 @@
 		6635A92E18916A740041BC8F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6635A94518916ABD0041BC8F /* MONDecimalNumberField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MONDecimalNumberField.h; sourceTree = "<group>"; };
 		6635A94618916ABD0041BC8F /* MONDecimalNumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MONDecimalNumberField.m; sourceTree = "<group>"; };
+		667B9F0818A5AA3D00D86938 /* CHANGELOG.mdown */ = {isa = PBXFileReference; lastKnownFileType = text; name = CHANGELOG.mdown; path = ../CHANGELOG.mdown; sourceTree = "<group>"; };
+		667B9F0918A5AA3D00D86938 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		667B9F0A18A5AA3D00D86938 /* NOTICE */ = {isa = PBXFileReference; lastKnownFileType = text; name = NOTICE; path = ../NOTICE; sourceTree = "<group>"; };
 		668D52CB189177E300379E32 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.mdown; path = ../README.mdown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,7 +56,10 @@
 		6635A90918916A740041BC8F = {
 			isa = PBXGroup;
 			children = (
+				667B9F0818A5AA3D00D86938 /* CHANGELOG.mdown */,
 				668D52CB189177E300379E32 /* README.mdown */,
+				667B9F0918A5AA3D00D86938 /* LICENSE */,
+				667B9F0A18A5AA3D00D86938 /* NOTICE */,
 				6635A91B18916A740041BC8F /* DecimalNumberFieldCatalog */,
 				6635A94418916AA80041BC8F /* MONDecimalNumberField */,
 				6635A91418916A740041BC8F /* Frameworks */,

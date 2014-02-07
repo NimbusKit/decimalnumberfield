@@ -1,0 +1,7 @@
+
+## 1.0.0 Feb 7, 2014
+
+Initial release.
+
+- Added to Cocoapods.
+- Includes support for currencies and decimal numbers.
