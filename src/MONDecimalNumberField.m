@@ -16,6 +16,10 @@
 
 #import "MONDecimalNumberField.h"
 
+#if !defined(__has_feature) || !__has_feature(objc_arc)
+#error "MONDecimalNumberField requires ARC support."
+#endif
+
 static const CGFloat kCaretWidth = 2; // Should this be variable based on the font?
 
 // Calculated display metrics for the decimal number field.
