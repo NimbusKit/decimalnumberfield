@@ -38,7 +38,7 @@ static const CGFloat kCaretWidth = 2; // Should this be variable based on the fo
 @implementation MONDecimalNumberFieldDisplayMetrics
 @end
 
-@interface MONDecimalNumberField () <UITextFieldDelegate, UIKeyInput>
+@interface MONDecimalNumberField () <UIKeyInput>
 @end
 
 @implementation MONDecimalNumberField {
