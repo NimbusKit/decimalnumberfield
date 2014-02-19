@@ -21,6 +21,7 @@
 #endif
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 /**
  * @defgroup NimbusDecimalNumberField Nimbus Decimal Number Field
