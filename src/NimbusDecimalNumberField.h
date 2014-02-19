@@ -1,5 +1,5 @@
 //
-// Copyright 2014 Jeff Verkoeyen
+// Copyright 2011-2014 NimbusKit
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,10 +14,17 @@
 // limitations under the License.
 //
 
-#import <UIKit/UIKit.h>
+#ifdef NIMBUSKIT_FRAMEWORK
+  #import <NimbusKit/NIDecimalNumberField.h>
+#else
+  #import "NIDecimalNumberField.h"
+#endif
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import <Foundation/Foundation.h>
 
-@property (strong, nonatomic) UIWindow *window;
-
-@end
+/**
+ * @defgroup NimbusDecimalNumberField Nimbus Decimal Number Field
+ *
+ * <div id="github" feature="decimalnumberfield"></div>
+ *
+ */

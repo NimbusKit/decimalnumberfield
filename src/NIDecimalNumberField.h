@@ -1,5 +1,5 @@
 //
-// Copyright 2014 Jeff Verkoeyen
+// Copyright 2011-2014 NimbusKit
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,13 +16,13 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol MONDecimalNumberFieldDelegate;
+@protocol NIDecimalNumberFieldDelegate;
 
 /**
- * The MONDecimalNumberField class provides a control that allows a user to input formatted decimal
+ * The NIDecimalNumberField class provides a control that allows a user to input formatted decimal
  * numbers using a decimal keyboard.
  */
-@interface MONDecimalNumberField : UIControl
+@interface NIDecimalNumberField : UIControl
 
 @property (nonatomic, strong) NSDecimalNumber*        value;
 
@@ -44,13 +44,13 @@
 @property (nonatomic)         NSUInteger              maximumIntegerDigits; // default: NSUIntegerMax
 @property (nonatomic)         NSUInteger              maximumFractionDigits;// default: NSUIntegerMax
 
-@property (nonatomic, weak) id<MONDecimalNumberFieldDelegate> delegate;
+@property (nonatomic, weak) id<NIDecimalNumberFieldDelegate> delegate;
 
 @end
 
-@protocol MONDecimalNumberFieldDelegate <NSObject>
+@protocol NIDecimalNumberFieldDelegate <NSObject>
 @required
 
-- (void)decimalNumberField:(MONDecimalNumberField *)field didChangeValue:(NSDecimalNumber *)value;
+- (void)decimalNumberField:(NIDecimalNumberField *)field didChangeValue:(NSDecimalNumber *)value;
 
 @end

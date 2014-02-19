@@ -1,5 +1,5 @@
 //
-// Copyright 2014 Jeff Verkoeyen
+// Copyright 2011-2014 NimbusKit
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,16 +14,16 @@
 // limitations under the License.
 //
 
-#import "MONDecimalNumberField.h"
+#import "NIDecimalNumberField.h"
 
 #if !defined(__has_feature) || !__has_feature(objc_arc)
-#error "MONDecimalNumberField requires ARC support."
+#error "Nimbus requires ARC support."
 #endif
 
 static const CGFloat kCaretWidth = 2; // Should this be variable based on the font?
 
 // Calculated display metrics for the decimal number field.
-@interface MONDecimalNumberFieldDisplayMetrics : NSObject
+@interface NIDecimalNumberFieldDisplayMetrics : NSObject
 @property (nonatomic) CGSize boundingSize;
 @property (nonatomic) CGRect frame;
 @property (nonatomic) CGRect frameOfNumbers;
@@ -35,20 +35,20 @@ static const CGFloat kCaretWidth = 2; // Should this be variable based on the fo
 @property (nonatomic) UIEdgeInsets decimalInset; // Insets specifically for the decimal values, if applicable.
 @end
 
-@implementation MONDecimalNumberFieldDisplayMetrics
+@implementation NIDecimalNumberFieldDisplayMetrics
 @end
 
-@interface MONDecimalNumberField () <UIKeyInput>
+@interface NIDecimalNumberField () <UIKeyInput>
 @end
 
-@implementation MONDecimalNumberField {
+@implementation NIDecimalNumberField {
   NSMutableString* _backingString;
   NSString* _displayString;
 
   UIView* _caretView;
   NSTimer* _caretTimer;
 
-  MONDecimalNumberFieldDisplayMetrics* _displayMetrics;
+  NIDecimalNumberFieldDisplayMetrics* _displayMetrics;
 
   NSNumberFormatter* _numberFormatter;
   NSString* _decimalSeparator;
@@ -110,7 +110,7 @@ static const CGFloat kCaretWidth = 2; // Should this be variable based on the fo
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {
-  MONDecimalNumberFieldDisplayMetrics* metrics = [self displayMetricsWithSize:size];
+  NIDecimalNumberFieldDisplayMetrics* metrics = [self displayMetricsWithSize:size];
   return metrics.frame.size;
 }
 
@@ -133,7 +133,7 @@ static const CGFloat kCaretWidth = 2; // Should this be variable based on the fo
 
 - (void)drawRect:(CGRect)rect {
   [super drawRect:rect];
-  MONDecimalNumberFieldDisplayMetrics* metrics = [self displayMetricsWithSize:self.bounds.size];
+  NIDecimalNumberFieldDisplayMetrics* metrics = [self displayMetricsWithSize:self.bounds.size];
 
   // Draw the selection background.
   if (self.isFirstResponder && _resetOnFirstModification) {
@@ -423,7 +423,7 @@ static const CGFloat kCaretWidth = 2; // Should this be variable based on the fo
   return _displayString;
 }
 
-- (void)calculateFontForDisplayMetrics:(MONDecimalNumberFieldDisplayMetrics *)metrics {
+- (void)calculateFontForDisplayMetrics:(NIDecimalNumberFieldDisplayMetrics *)metrics {
   // Calculate the scaled font size.
   NSMutableDictionary* attributes = [[self attributesForText] mutableCopy];
   UIFont* originalFont = [self attributesForText][NSFontAttributeName];
@@ -455,9 +455,9 @@ static const CGFloat kCaretWidth = 2; // Should this be variable based on the fo
   metrics.attributes = attributes;
 }
 
-- (MONDecimalNumberFieldDisplayMetrics *)displayMetricsWithSize:(CGSize)size {
+- (NIDecimalNumberFieldDisplayMetrics *)displayMetricsWithSize:(CGSize)size {
   if (nil == _displayMetrics || !CGSizeEqualToSize(_displayMetrics.boundingSize, size)) {
-    MONDecimalNumberFieldDisplayMetrics* displayMetrics = [[MONDecimalNumberFieldDisplayMetrics alloc] init];
+    NIDecimalNumberFieldDisplayMetrics* displayMetrics = [[NIDecimalNumberFieldDisplayMetrics alloc] init];
     displayMetrics.boundingSize = size;
 
     NSString* displayString = [self displayString];
