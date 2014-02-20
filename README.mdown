@@ -12,8 +12,6 @@ applicable.
 Overview
 --------
 
-![catalog](https://github.com/moneysapp/decimalnumberfield/raw/master/screenshots/screenshot1.png)
-
 This field provides numerical input in a visually intuitive way. It uses the correct keyboard given
 the properties of the field and shows a caret at the expected location.
 
