@@ -448,6 +448,8 @@ static const CGFloat kCaretWidth = 2; // Should this be variable based on the fo
   CGFloat alignmentOffset = 0;
   if (_textAlignment == NSTextAlignmentRight) {
     alignmentOffset = self.bounds.size.width - textSize.width;
+  } else if (_textAlignment == NSTextAlignmentCenter) {
+    alignmentOffset = NICenterX(self.bounds.size, textSize);
   }
 
   metrics.frame = CGRectMake(alignmentOffset, originalFontHeight - shrunkenFontHeight,
