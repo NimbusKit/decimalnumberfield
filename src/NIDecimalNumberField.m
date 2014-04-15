@@ -16,6 +16,8 @@
 
 #import "NIDecimalNumberField.h"
 
+#import "NimbusCore.h"
+
 #if !defined(__has_feature) || !__has_feature(objc_arc)
 #error "NimbusKit requires ARC support."
 #endif
@@ -184,6 +186,7 @@ static const CGFloat kCaretWidth = 2; // Should this be variable based on the fo
 
 - (BOOL)becomeFirstResponder {
   BOOL becomeFirstResponder = [super becomeFirstResponder] && self.enabled;
+
   if (becomeFirstResponder) {
     _resetOnFirstModification = self.clearsOnBeginEditing;
     [self didGainFocus];
@@ -203,7 +206,15 @@ static const CGFloat kCaretWidth = 2; // Should this be variable based on the fo
 }
 
 - (BOOL)canBecomeFirstResponder {
-  return self.enabled;
+  BOOL canBecomeFirstResponder = self.enabled;
+
+  if (canBecomeFirstResponder && [_delegate respondsToSelector:@selector(decimalNumberFieldShouldBeginEditing:)]) {
+    if (![_delegate decimalNumberFieldShouldBeginEditing:self]) {
+      canBecomeFirstResponder = NO;
+    }
+  }
+
+  return canBecomeFirstResponder;
 }
 
 - (BOOL)canResignFirstResponder {
@@ -452,8 +463,12 @@ static const CGFloat kCaretWidth = 2; // Should this be variable based on the fo
     alignmentOffset = NICenterX(self.bounds.size, textSize);
   }
 
-  metrics.frame = CGRectMake(alignmentOffset, originalFontHeight - shrunkenFontHeight,
-                             textSize.width, textSize.height);
+  CGRect frame = CGRectMake(alignmentOffset, (originalFontHeight - shrunkenFontHeight) / 2,
+                            textSize.width, textSize.height);
+  if (self.contentVerticalAlignment == UIControlContentVerticalAlignmentCenter) {
+    frame.origin.y = NICenterY(metrics.boundingSize, frame.size);
+  }
+  metrics.frame = frame;
   metrics.attributes = attributes;
 }
 
@@ -595,6 +610,9 @@ static const CGFloat kCaretWidth = 2; // Should this be variable based on the fo
 
 - (void)setValue:(NSDecimalNumber *)value {
   _backingString = [[value descriptionWithLocale:[self localeForDecimalNumbers]] mutableCopy];
+  if (nil == _backingString) {
+    _backingString = [@"" mutableCopy];
+  }
   if (!self.allowDecimals) {
     _backingString = [[self textWithDecimalStrippedFromText:_backingString] mutableCopy];
   }

@@ -53,4 +53,8 @@
 
 - (void)decimalNumberField:(NIDecimalNumberField *)field didChangeValue:(NSDecimalNumber *)value;
 
+@optional
+
+- (BOOL)decimalNumberFieldShouldBeginEditing:(NIDecimalNumberField *)decimalNumberField;
+
 @end
